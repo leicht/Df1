@@ -1,0 +1,72 @@
+============================================================================
+=                               df1 1.0.0                      23/01/2003  =
+============================================================================
+
+
+======================================
+ Author
+======================================
+Author: Stephane LEICHT
+e-mail: stephane.leicht@foxinfo.fr
+homepage: http://www.foxinfo.fr
+
+
+======================================
+ Requirements
+======================================
+a SLC500 or micrologix connected on the serial port.
+
+
+======================================
+ Install
+======================================
+
+  Compilation: make
+
+  install :      copy df1 in /usr/bin
+                 copy df1d in /etc/init.d
+
+======================================
+ Features
+======================================
+        This program is a daemon to communicate with ethernet TCPIP from programmable logic
+controller SLC500 and MicroLogix ALLEN-BRADLEY connected on the serial port (df1).
+
+======================================
+Licence
+======================================
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+======================================
+ Getting started
+======================================
+       start df1 daemon with the script df1d > /etc/init.d/df1d start
+
+       open a telnet session > telnet localhost 17560
+
+       read integer value in SLC500 >   N7:1
+       write integer value in SLC500 >  N7:1=456
+                                        T4:0.PRE=15
+
+       read float value in SLC500 >     F8:5
+       write float value in SLC500 >    F8:2=-3.14
+                                        F8:1=5E-4
+                                        F8:0=7.001
+
+       read boolean value in SLC500 >   B3:0/5
+                                        T4:0.dn
+       write boolean value in SLC500 >  B3:0/5=1
+                                        B3:0/4=0
+
+       you can view logs in /var/log/syslog.
