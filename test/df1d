@@ -1,0 +1,35 @@
+#!/bin/sh
+#
+# chkconfig: 2345 80 90
+# description: Server df1 for SLC500 AB PLC
+
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+export PATH
+
+# Source function library.
+#. /etc/rc.d/init.d/functions
+
+# See how we are called.
+case "$1" in
+  start)
+        printf "Starting df1 server...\n"
+  	df1
+	echo ""
+	;;
+  stop)
+  	PID=`pidof -s df1`
+	if [ "$PID" ]; then
+	        printf "Stopping df1 server...\n"
+		kill -3 $PID
+        fi
+	echo ""
+	;;
+  restart)
+	$0 stop
+	$0 start
+	;;
+  *)
+	printf "Usage: df1 {start|stop|restart}\n"
+	exit 1
+esac
+
