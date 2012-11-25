@@ -1,4 +1,4 @@
-/*  Copyright (C) 2002 Stephane LEICHT (stephane.leicht@foxinfo.fr) http://www.foxinfo.fr
+/*  Copyright (C) 2002 Stephane LEICHT (stephane.leicht@gmail.com)
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
